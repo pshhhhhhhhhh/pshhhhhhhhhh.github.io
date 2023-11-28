@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+    <link href="adminPageCss.css" rel="stylesheet">
+    <title>Admin Page</title>
+</head>
+
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <nav class="navbar">
+        <input placeholder="Search" class="nav-search">
+        <div class="search-button">
+            <i class="fas fa-search" style="color: #ffffff;"></i>
+        </div>
+        <div style="flex-grow: 1;"></div>
+        <div class="nav-right-content">
+            <i class="fas fa-bell"></i>
+            <i class="fas fa-envelope"></i>
+            <p>Minni Park</p>
+        </div>
+    </nav>
+    <nav class="left-navbar">
+        <ul>
+            <li><i class="fas fa-home" style="color: #ffffff;"></i>
+                <p>Home</p>
+            </li>
+            <li><i class="fas fa-headphones" style="color: #ffffff;"></i>
+                <p>Servicies</p>
+            </li>
+            <li><i class="fas fa-flag" style="color: #ffffff;"></i>
+                <p> Alerts</p>
+            </li>
+            <li><i class="fas fa-chart-pie" style="color: #ffffff;"></i>
+                <p> Stats</p>
+            </li>
+        </ul>
+    </nav>
+    <div style="height: 80px;"></div>
+    <div class="main-content">
+        <h2>Dashboard</h2>
+        <div class="card-zone">
+            <div class="main-card">
+                <div class="card-content">
+                    <p>Earnings (Monthly)</p>
+                    <h3>$400,000</h3>
+                </div>
+                <div class="card-icon">
+                    <i class="fas fa-calendar fa-lg"></i>
+                </div>
+            </div>
+            <div class="main-card">
+                <div class="card-content">
+                    <p>Earnings (Annual)</p>
+                    <h3>$800,000</h3>
+                </div>
+                <div class="card-icon">
+                    <i class="fas fa-dollar-sign fa-lg"></i>
+                </div>
+            </div>
+            <div class="main-card">
+                <div class="card-content">
+                    <p>Tasks</p>
+                    <h3>13</h3>
+                </div>
+                <div class="card-icon">
+                    <i class="fas fa-tasks fa-lg"></i>
+                </div>
+            </div>
+            <div class="main-card">
+                <div class="card-content">
+                    <p>Requests</p>
+                    <h3>26</h3>
+                </div>
+                <div class="card-icon">
+                    <i class="fas fa-comments fa-lg"></i>
+                </div>
+            </div>
+        </div>
+        <div class="chart-zone">
+            <div class="main-chart">
+                <h3>Earnings OverView</h4>
+                    <canvas id="myChart"></canvas>
+
+                    <script>
+                        var ctx = document.getElementById('myChart').getContext('2d');
+                        var myChart = new Chart(ctx, {
+                            type: 'line',
+                            data: {
+                                labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+                                datasets: [{
+                                    label: 'Monthly',
+                                    data: [12, 19, 3, 5, 2, 3],
+                                    backgroundColor: 'rgba(73, 76, 180)',
+                                    borderColor: 'rgba(73, 76, 180)',
+                                    borderWidth: 1,
+                                    fill: true,
+                                }]
+                            },
+                            options: {
+                                scales: {
+                                    y: {
+                                        beginAtZero: true
+                                    }
+                                }
+                            }
+                        });
+                    </script>
+            </div>
+            <div class="main-tasks">
+                <div class="task-title">
+                    <h3>Tasks</h3>
+                </div>
+                <div class="task-content">
+                    <p>Borrowed Items</p>
+                    <div class="task-number">
+                        <p>14</p>
+                    </div>
+                </div>
+                <div class="task-content">
+                    <p>Trello requests</p>
+                    <div class="task-number">
+                        <p>2</p>
+                    </div>
+                </div>
+                <div class="task-content">
+                    <p>Marked Comments</p>
+                    <div class="task-number">
+                        <p>1</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
